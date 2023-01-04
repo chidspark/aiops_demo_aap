@@ -1,7 +1,7 @@
 ---
 - name: Perform Remediation
   hosts: avaya_app_server
-  become: yes
+  become: no
   gather_facts: no
 
   roles:
