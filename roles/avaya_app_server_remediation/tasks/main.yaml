@@ -1,12 +1,8 @@
 ---
-- name: Stop Session/Service
-  ansible.builtin.command: tmux kill-session
-  ignore_errors: true
-
 - name: Reboot VM
   ansible.builtin.reboot:
     reboot_timeout: 300
   become: yes
     
 - name: Start Session/Service
-  ansible.builtin.shell: /home/ec2-user/.local/bin/tmuxp load /home/ec2-user/maxheap.yaml 2>&1 > /home/ec2-user/aiops.log &
+  ansible.builtin.command: java -Dlog4j.configurationFile=log4j2.xml -classpath log4j-api-2.19.0.jar:log4j-core-2.19.0.jar:. MaxHeapConsumption 2>&1 >> /home/ec2-user/aiops.log &
