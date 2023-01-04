@@ -9,4 +9,4 @@
   become: yes
     
 - name: Start Session/Service
-  ansible.builtin.command: /home/ec2-user/.local/bin/tmuxp load /home/ec2-user/maxheap.yaml 2>&1 > /home/ec2-user/aiops.log &
+  ansible.builtin.shell: /home/ec2-user/.local/bin/tmuxp load /home/ec2-user/maxheap.yaml 2>&1 > /home/ec2-user/aiops.log &
