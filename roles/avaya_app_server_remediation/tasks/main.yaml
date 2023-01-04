@@ -5,4 +5,4 @@
   become: yes
     
 - name: Start Session/Service
-  ansible.builtin.command: java -Dlog4j.configurationFile=log4j2.xml -classpath log4j-api-2.19.0.jar:log4j-core-2.19.0.jar:. MaxHeapConsumption 2>&1 >> /home/ec2-user/aiops.log &
+  ansible.builtin.command: java -Dlog4j.configurationFile=log4j2.xml -classpath log4j-api-2.19.0.jar:log4j-core-2.19.0.jar:. MaxHeapConsumption 2>&1 > /home/ec2-user/aiops.log &
