@@ -1,6 +1,7 @@
 ---
 - name: Stop Session/Service
   ansible.builtin.command: tmux kill-session
+  ignore_errors: true
 
 - name: Reboot VM
   ansible.builtin.reboot:
